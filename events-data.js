@@ -1,4 +1,4 @@
-// Event images are localised official/user-provided images. Last update 2026-11-14 (events 1, 3, 4, 5, 7).
+// Event images are localised official/user-provided images. Last update 2026-11-14 (events 9, 10, 11 added).
 window.EVENT_DATA = {
  "columns": [
   "番号",
@@ -222,6 +222,91 @@ window.EVENT_DATA = {
     "場所（詳細）": "Kアリーナ横浜（OPEN 16:00 / START 17:30）",
     "備考": "最速先行抽選 2026-11-04 19:00〜12-09 23:59（武道館ライブBD封入シリアル）"
    }
+  },
+  {
+   "id": 9,
+   "fields": {
+    "番号": 9,
+    "イベント名": "ガールズバンドクライ 冬祭りフェア2027",
+    "公式ページ": "https://www.animate-onlineshop.jp/contents/fair_event/detail.php?id=116363",
+    "開催場所": "全国",
+    "グッズ": "〇",
+    "通販": "〇",
+    "期間（開始）": "2027-01-16",
+    "期間（終了）": "2027-02-07",
+    "特典": "ポストカード（全5種）（グッズ税込1,100円毎／書籍・映像商品1点毎に1枚）",
+    "場所（詳細）": "全国アニメイト全店・アニメイト通販",
+    "備考": "1/16発売の新商品あり（アクリルスタンド冬祭り5種・キャラバッジコレクション等）。アニメイト限定商品あり"
+   },
+   "images": {
+    "main": [],
+    "items": [
+     "item-1.jpg",
+     "item-2.jpg",
+     "item-3.jpg",
+     "item-4.jpg"
+    ],
+    "extras": [],
+    "unclassified": []
+   },
+   "folderUrl": "https://www.animate-onlineshop.jp/contents/fair_event/detail.php?id=116363"
+  },
+  {
+   "id": 10,
+   "fields": {
+    "番号": 10,
+    "イベント名": "ガールズバンドクライPOP UP SHOP（コトブキヤ）",
+    "公式ページ": "https://www.kotobukiya.co.jp/event/detail/1422/",
+    "開催場所": "秋葉原・立川",
+    "グッズ": "〇",
+    "通販": "不明",
+    "期間（開始）": "2026-12-04",
+    "期間（終了）": "2026-12-13",
+    "特典": "未発表（coming soon）",
+    "場所（詳細）": "コトブキヤ秋葉原館1階／コトブキヤ立川本店",
+    "備考": "描き下ろしイラスト使用の新商品グッズを販売。スタンディパネル展示（前半12/4〜12/9：仁菜・桃香・すばる／後半12/10〜12/13：智・ルパ）。販売商品・購入特典は後日発表"
+   },
+   "images": {
+    "main": [
+     "main.jpg"
+    ],
+    "items": [],
+    "extras": [],
+    "unclassified": []
+   },
+   "folderUrl": "https://www.kotobukiya.co.jp/event/detail/1422/"
+  },
+  {
+   "id": 11,
+   "fields": {
+    "番号": 11,
+    "イベント名": "ガールズバンドクライ×楽園追放 心のレゾナンス",
+    "公式ページ": "https://chugaionline.xyz/event/girls-band-cry_rakuen-tsuiho/",
+    "開催場所": "全国",
+    "グッズ": "〇",
+    "通販": "〇",
+    "期間（開始）": "2026-11-16",
+    "期間（終了）": "2026-12-03",
+    "特典": "なし",
+    "場所（詳細）": "アニメイト一部店舗（店頭販売）／Chugaionline・アニメイトほか全国のホビーショップ等（予約受付）",
+    "備考": "コラボレーション商品の発売・予約受付。期間は通販予約期間（店頭販売は11/16発売）。通販予約分は2027年2月以降順次発送"
+   },
+   "images": {
+    "main": [
+     "main.jpg"
+    ],
+    "items": [
+     "item-1.jpg",
+     "item-2.jpg",
+     "item-3.jpg",
+     "item-4.jpg",
+     "item-5.jpg",
+     "item-6.jpg"
+    ],
+    "extras": [],
+    "unclassified": []
+   },
+   "folderUrl": "https://chugaionline.xyz/event/girls-band-cry_rakuen-tsuiho/"
   }
  ]
 };
