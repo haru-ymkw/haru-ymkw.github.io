@@ -1,4 +1,4 @@
-// Event images for events 6 and 8 are localised official images (fetched 2026-11-14); the 55 local images for other events are migrated at publish stage.
+// Event images are localised official/user-provided images. Last update 2026-11-14 (events 1, 3, 4).
 window.EVENT_DATA = {
  "columns": [
   "番号",
@@ -24,7 +24,7 @@ window.EVENT_DATA = {
     "グッズ": "〇",
     "通販": "なし",
     "期間（開始）": "2026-11-03",
-    "期間（終了）": null,
+    "期間（終了）": "2026-11-03",
     "特典": "5000円毎チケット風カード（11種）",
     "場所（詳細）": "横浜ワールドポーターズ 6F イベントホールA/B",
     "備考": null
@@ -76,9 +76,16 @@ window.EVENT_DATA = {
     "備考": "通販は10/30　11：00～"
    },
    "images": {
-    "main": [],
-    "items": [],
-    "extras": [],
+    "main": [
+     "main.jpg"
+    ],
+    "items": [
+     "item-1.jpg"
+    ],
+    "extras": [
+     "extra-1.jpg",
+     "extra-2.jpg"
+    ],
     "unclassified": []
    },
    "folderUrl": "https://www.curtain-damashii.com/event/girlsbandcry2026/"
@@ -99,7 +106,9 @@ window.EVENT_DATA = {
     "備考": "矢向湯はトートバッグ、タペストリー、サウナハットのみ"
    },
    "images": {
-    "main": [],
+    "main": [
+     "main.jpg"
+    ],
     "items": [],
     "extras": [],
     "unclassified": []
