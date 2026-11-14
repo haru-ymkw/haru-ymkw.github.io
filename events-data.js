@@ -1,4 +1,4 @@
-// Event images are localised official/user-provided images. Last update 2026-11-14 (events 1, 3, 4).
+// Event images are localised official/user-provided images. Last update 2026-11-14 (events 1, 3, 4, 5, 7).
 window.EVENT_DATA = {
  "columns": [
   "番号",
@@ -131,9 +131,15 @@ window.EVENT_DATA = {
     "備考": "通販は10/26　12：00～"
    },
    "images": {
-    "main": [],
-    "items": [],
-    "extras": [],
+    "main": [
+     "main.jpg"
+    ],
+    "items": [
+     "item-1.jpg"
+    ],
+    "extras": [
+     "extra-1.jpg"
+    ],
     "unclassified": []
    },
    "folderUrl": "https://www.chugai-contents.jp/blog/event/girls-band-cry_rakuya/"
@@ -181,7 +187,9 @@ window.EVENT_DATA = {
     "備考": "オリジナルエール（990円）"
    },
    "images": {
-    "main": [],
+    "main": [
+     "main.jpg"
+    ],
     "items": [],
     "extras": [],
     "unclassified": []
