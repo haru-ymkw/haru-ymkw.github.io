@@ -8,8 +8,10 @@ const formatValue = (label, value) => {
   if (label === '期間（開始）' || label === '期間（終了）') return value.slice(0, 10);
   return value;
 };
+// 画像キャッシュ対策：内容を差し替えたら IMG_VERSION を上げる（index.html の ?v= も同じ値にそろえる）
+const IMG_VERSION = '20261115-2';
 const imagePath = (event, file) =>
-  file.startsWith('http') ? file : `assets/events/${event.id}/${file}`;
+  file.startsWith('http') ? file : `assets/events/${event.id}/${file}?v=${IMG_VERSION}`;
 const cardMascot = (index) =>
   `assets/decor/mascot-${CARD_MASCOTS[index % CARD_MASCOTS.length]}.png`;
 
