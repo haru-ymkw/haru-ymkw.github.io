@@ -286,6 +286,32 @@ window.EVENT_DATA = {
    "id": 10,
    "fields": {
     "番号": 10,
+    "イベント名": "ガールズバンドクライ ラッキー缶バッジBOX",
+    "期間（開始）": "2026-12-12",
+    "期間（終了）": "",
+    "開催場所": "全国",
+    "場所（詳細）": "全国の取扱店舗（アニメイト・ゲーマーズ・駿河屋・イエローサブマリンなど100店舗以上）",
+    "グッズ": "○",
+    "通販": "不明",
+    "特典": "ゴールド券でBIGアクリルスタンド（全5種）をプレゼント。ラッキーエンド賞でA4アクリルパネル",
+    "公式ページ": "https://x.com/crux_anime/status/2121152334927454629?a=R4f1yMo0IJnHbWtzJkg&s=46",
+    "備考": "クラックス（CRUX）の缶バッジくじ。全20種、1個550円（税込）。新規描き下ろしイラスト使用。2026年12月12日（土）より順次発売。取扱店舗一覧（PDF）：https://gigaplus.makeshop.jp/cruxonline/common/img/dokujiPageimg/atarituki/2612_GC_Luckycan.pdf"
+   },
+   "images": {
+    "main": [
+     "main.jpg"
+    ],
+    "items": [
+     "item-1.jpg"
+    ],
+    "extras": [],
+    "unclassified": []
+   }
+  },
+  {
+   "id": 11,
+   "fields": {
+    "番号": 11,
     "イベント名": "ガールズバンドクライ 冬祭りフェア2027",
     "公式ページ": "https://www.animate-onlineshop.jp/contents/fair_event/detail.php?id=116363",
     "開催場所": "全国",
@@ -313,7 +339,7 @@ window.EVENT_DATA = {
    "folderUrl": "https://www.animate-onlineshop.jp/contents/fair_event/detail.php?id=116363"
   },
   {
-   "id": 11,
+   "id": 12,
    "images": {
     "main": [
      "main.jpg"
@@ -326,7 +352,7 @@ window.EVENT_DATA = {
    },
    "folderUrl": "file:///events/8/",
    "fields": {
-    "番号": 11,
+    "番号": 12,
     "イベント名": "トゲナシトゲアリ ONE-MAN LIVE “凛音の耀”",
     "公式ページ": "https://girls-band-cry.com/live/post-26.html",
     "開催場所": "横浜",
