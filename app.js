@@ -9,9 +9,25 @@ const formatValue = (label, value) => {
   return value;
 };
 // 画像キャッシュ対策：内容を差し替えたら IMG_VERSION を上げる（index.html の ?v= も同じ値にそろえる）
-const IMG_VERSION = '20261115-2';
+const IMG_VERSION = '20261115-3';
 const imagePath = (event, file) =>
   file.startsWith('http') ? file : `assets/events/${event.id}/${file}?v=${IMG_VERSION}`;
+// 文章中のURLをリンク化して要素へ追加する（備考などのテキスト欄用）
+const appendLinkedText = (el, text) => {
+  const parts = String(text).split(/(https?:\/\/[^\s、。）)」]+)/g);
+  for (const part of parts) {
+    if (/^https?:\/\//.test(part)) {
+      const a = document.createElement('a');
+      a.href = part;
+      a.target = '_blank';
+      a.rel = 'noreferrer';
+      a.textContent = part;
+      el.append(a);
+    } else if (part) {
+      el.append(document.createTextNode(part));
+    }
+  }
+};
 const cardMascot = (index) =>
   `assets/decor/mascot-${CARD_MASCOTS[index % CARD_MASCOTS.length]}.png`;
 
@@ -64,7 +80,7 @@ for (const event of current) {
       a.textContent = column === '公式ページ' ? '公式ページ ↗' : '通販ページ ↗';
       td.append(a);
     } else {
-      td.textContent = value;
+      appendLinkedText(td, value);
     }
     tr.append(td);
   }
@@ -168,7 +184,7 @@ function buildCard(event, mascotIndex) {
       a.textContent = value;
       dd.append(a);
     } else {
-      dd.textContent = value;
+      appendLinkedText(dd, value);
     }
     row.append(dt, dd);
     info.append(row);
