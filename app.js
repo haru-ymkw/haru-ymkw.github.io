@@ -5,11 +5,11 @@ const CARD_MASCOTS = ['09', '01', '08', '12', '13', '14', '05', '10', '02'];
 
 const formatValue = (label, value) => {
   if (value == null || value === '') return '';
-  if (label === '期間（開始）' || label === '期間（終了）') return value.slice(0, 10);
+  if (label === '期間（開始）' || label === '期間（終了）' || label === '通販終了日') return value.slice(0, 10);
   return value;
 };
 // 画像キャッシュ対策：内容を差し替えたら IMG_VERSION を上げる（index.html の ?v= も同じ値にそろえる）
-const IMG_VERSION = '20261115-3';
+const IMG_VERSION = '20261119-1';
 const imagePath = (event, file) =>
   file.startsWith('http') ? file : `assets/events/${event.id}/${file}?v=${IMG_VERSION}`;
 // 文章中のURLをリンク化して要素へ追加する（備考などのテキスト欄用）
@@ -58,6 +58,62 @@ document.querySelector('#event-count-label').textContent =
 document.querySelector('#current-count').innerHTML =
   `EVENTS <i>${String(current.length).padStart(2, '0')}</i> / ${String(events.length).padStart(2, '0')}`;
 if (!archived.length) document.querySelector('#archive').style.display = 'none';
+
+// 締切間近のお知らせ：締切まで14日以内のものを、種類をまぜて近い順に表示する
+const daysUntil = (dateStr) =>
+  Math.round((new Date(`${dateStr}T00:00:00`) - new Date(`${todayStr}T00:00:00`)) / 86400000);
+const jpDate = (dateStr) => {
+  const [y, m, d] = dateStr.split('-').map(Number);
+  return `${y}年${m}月${d}日`;
+};
+const deadlines = [];
+for (const event of events) {
+  const end = endOf(event);
+  const shopEnd = formatValue('通販終了日', event.fields['通販終了日']);
+  if (/^\d{4}-\d{2}-\d{2}$/.test(end) && shopEnd !== end) {
+    deadlines.push({ type: '開催終了', chip: 'chip-end', name: event.fields['イベント名'], date: end, href: `#event-${event.id}` });
+  }
+  if (/^\d{4}-\d{2}-\d{2}$/.test(shopEnd)) {
+    deadlines.push({ type: '通販終了', chip: 'chip-shop', name: event.fields['イベント名'], date: shopEnd, href: `#event-${event.id}` });
+  }
+}
+for (const product of window.GOODS_DATA?.products ?? []) {
+  const date = (product.fields['予約締切'] ?? '').slice(0, 10);
+  if (/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    deadlines.push({ type: '予約締切', chip: 'chip-reserve', name: product.fields['商品名'], date, href: 'goods.html' });
+  }
+}
+const upcoming = deadlines
+  .filter((d) => daysUntil(d.date) >= 0 && daysUntil(d.date) <= 14)
+  .sort((a, b) => a.date.localeCompare(b.date));
+const noticeSection = document.querySelector('#deadline-notice');
+const noticeList = document.querySelector('#notice-list');
+if (upcoming.length && noticeSection && noticeList) {
+  noticeSection.hidden = false;
+  for (const d of upcoming) {
+    const n = daysUntil(d.date);
+    const row = document.createElement('a');
+    row.className = 'notice-row';
+    row.href = d.href;
+    const main = document.createElement('div');
+    main.className = 'notice-row-main';
+    const chip = document.createElement('span');
+    chip.className = `deadline-chip ${d.chip}`;
+    chip.textContent = d.type;
+    const name = document.createElement('span');
+    name.className = 'notice-name';
+    name.textContent = d.name;
+    const badge = document.createElement('span');
+    badge.className = `days-badge${n > 6 ? ' soon' : ''}`;
+    badge.textContent = n === 0 ? '本日締切' : `あと${n}日`;
+    main.append(chip, name, badge);
+    const sub = document.createElement('div');
+    sub.className = 'notice-date';
+    sub.textContent = `${jpDate(d.date)}まで`;
+    row.append(main, sub);
+    noticeList.append(row);
+  }
+}
 
 for (const event of current) {
   const tr = document.createElement('tr');
@@ -166,7 +222,8 @@ function buildCard(event, mascotIndex) {
 
   const info = document.createElement('dl');
   info.className = 'event-info';
-  for (const column of columns) {
+  const infoColumns = columns.flatMap((c) => (c === '通販' ? [c, '通販終了日'] : [c]));
+  for (const column of infoColumns) {
     if (column === '番号') continue;
     const raw = event.fields[column];
     const value = formatValue(column, raw);

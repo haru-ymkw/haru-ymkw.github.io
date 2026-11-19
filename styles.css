@@ -27,3 +27,25 @@ footer{color:#a8bed2;position:relative;min-height:100px;padding-right:95px}foote
 /* publish-prep polish 2026-11-14 */
 .archive-section{background:rgba(5,17,31,.56);backdrop-filter:blur(3px);padding-inline:22px}
 @media(max-width:760px){.archive-section{padding-inline:12px}.list-heading{flex-direction:column;align-items:flex-start;gap:6px}.list-heading .count{margin-left:2px}}
+.notice-section{padding:36px 22px 0}
+.notice-card{border:1px solid #ff6488;border-radius:13px;background:linear-gradient(100deg,rgba(58,20,32,.88),rgba(8,23,39,.94));padding:20px 22px;box-shadow:0 12px 28px #0004}
+.notice-card h2{font-size:17px;margin:0;color:#ffb3c6;letter-spacing:-.02em}
+.notice-row{display:block;text-decoration:none;background:rgba(8,24,41,.94);border:1px solid #31516d;border-radius:10px;padding:10px 12px;margin-top:8px}
+.notice-row-main{display:flex;align-items:center;gap:8px}
+.deadline-chip{font-size:10px;font-weight:700;border-radius:6px;padding:2px 7px;white-space:nowrap}
+.chip-end{background:#31456e;color:#c9d6f2}
+.chip-shop{background:#2c5e46;color:#b8ecd2}
+.chip-reserve{background:#7a4a12;color:#ffd9a0}
+.notice-name{font-size:13px;font-weight:600;flex:1;line-height:1.5}
+.days-badge{background:#ff547b;color:#fff;border-radius:999px;padding:2px 9px;font-size:11px;font-weight:700;white-space:nowrap}
+.days-badge.soon{background:#e8930c}
+.notice-date{color:var(--muted);font-size:11px;margin-top:4px}
+.notice-note{color:var(--muted);font-size:10px;margin:10px 0 0}
+.goods-banner{display:block;margin:26px 22px 0;text-decoration:none;border:1px solid #ff6d91;border-radius:12px;padding:16px 20px;background:linear-gradient(90deg,rgba(42,21,48,.92),rgba(8,24,41,.94));box-shadow:0 12px 28px #0004}
+.goods-banner-title{display:block;font-size:16px;font-weight:700;color:var(--ink)}
+.goods-banner-title span{color:#ff8fab}
+.goods-banner-sub{display:block;color:var(--muted);font-size:11px;margin-top:4px}
+.bonus-item{margin:0}
+.bonus-item figcaption{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.5}
+.goods-actions{margin:14px 0 4px}
+@media(max-width:760px){.notice-section{padding-top:26px}}
