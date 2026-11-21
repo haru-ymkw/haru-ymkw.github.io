@@ -9,7 +9,7 @@ const formatValue = (label, value) => {
   return value;
 };
 // 画像キャッシュ対策：内容を差し替えたら IMG_VERSION を上げる（index.html の ?v= も同じ値にそろえる）
-const IMG_VERSION = '20261122-1';
+const IMG_VERSION = '20261122-2';
 const imagePath = (event, file) =>
   file.startsWith('http') ? file : `assets/events/${event.id}/${file}?v=${IMG_VERSION}`;
 // 文章中のURLをリンク化して要素へ追加する（備考などのテキスト欄用）
@@ -135,6 +135,12 @@ for (const event of current) {
       a.rel = 'noreferrer';
       a.textContent = column === '公式ページ' ? '公式ページ ↗' : '通販ページ ↗';
       td.append(a);
+    } else if (column === '特典' || column === '備考') {
+      td.className = 'cell-long';
+      const span = document.createElement('span');
+      span.className = 'cell-clamp';
+      appendLinkedText(span, value);
+      td.append(span);
     } else {
       appendLinkedText(td, value);
     }
