@@ -2,7 +2,7 @@ const GOODS_DATA = window.GOODS_DATA;
 const products = GOODS_DATA.products ?? [];
 
 // 画像キャッシュ対策：内容を差し替えたら IMG_VERSION を上げる（goods.html の ?v= も同じ値にそろえる）
-const IMG_VERSION = '20261121-1';
+const IMG_VERSION = '20261122-1';
 const imagePath = (product, file) =>
   file.startsWith('http') ? file : `assets/goods/${product.id}/${file}?v=${IMG_VERSION}`;
 // 文章中のURLをリンク化して要素へ追加する（備考などのテキスト欄用）
