@@ -9,7 +9,7 @@ const formatValue = (label, value) => {
   return value;
 };
 // 画像キャッシュ対策：内容を差し替えたら IMG_VERSION を上げる（index.html の ?v= も同じ値にそろえる）
-const IMG_VERSION = '20261127-1';
+const IMG_VERSION = '20261127-2';
 const imagePath = (event, file) =>
   file.startsWith('http') ? file : `assets/events/${event.id}/${file}?v=${IMG_VERSION}`;
 // 文章中のURLをリンク化して要素へ追加する（備考などのテキスト欄用）
